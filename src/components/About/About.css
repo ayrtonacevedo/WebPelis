@@ -1,0 +1,43 @@
+/* About.css */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 60vh;
+  }
+  
+  .about-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: white;
+  }
+  .about-container p:hover {
+    color: red;
+  }
+  .about-container h2:hover {
+    color: red;
+  }
+
+  /* Estilos para hacerlo responsive */
+  @media screen and (max-width: 768px) {
+    .about-container {
+      padding: 10px;
+    }
+  
+    .about-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .about-container p {
+      font-size: 1rem;
+    }
+  }
+  

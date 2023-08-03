@@ -1,0 +1,79 @@
+
+/* Estilos generales para el formulario */
+.todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    text-align: center;
+    /* margin-top: 5%; */
+    margin-bottom: 0;
+  }
+  
+  .contact-container {
+    width: 350px;
+    background-color: red;
+    opacity: 0.9;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    color: wheat;
+  }
+  
+  .contact-container input,
+  .contact-container textarea,
+  .contact-container button {
+    padding: 9px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .contact-container textarea {
+    resize: vertical;
+  }
+  
+  .contact-container button {
+    cursor: pointer;
+    font-weight: 500;
+    background-color: rgba(127, 255, 195);
+  }
+  
+  .contact-container button:hover {
+    background-color: rgba(69, 240, 183);
+  }
+  
+  .contact-container button:active {
+    background-color: rgba(149, 241, 210);
+  }
+  
+  .contact-container i {
+    color: rgba(59, 59, 59);
+    margin-left: 10px;
+  }
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      width: 90%;
+      max-width: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .todo {
+      padding: 20px;
+    }
+  
+    .contact-container {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  

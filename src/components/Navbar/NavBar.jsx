@@ -1,35 +1,46 @@
 import React,{useState} from 'react'
 import "./NavBar.css"
 import {FaBars, FaTimes} from "react-icons/fa"
+import {useAuth} from '../../context/authContext'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const NavBar = () => {
 
   const[click, setClick]=useState(false)
   const handleClick=()=>setClick(!click)
 
+  const {user, signout}=useAuth()
+  const navigate=useNavigate()
+
+  const handleSignOut= async ()=>{
+    await signout()
+    navigate('/home')
+  }
+
 
 
   return (
     <>
     <div className="hero">
-      {/* <nav className='nav'> */}
-        <h2 className='logo'>Mighty <span>Heroes</span></h2>
+        <Link to='/home'><h2 className='logo'>Movie <span>Prime</span></h2></Link>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li><a href='/home'>Home</a></li>
-          <li><a href='#'>About</a></li>
-          <li><a href='#'>Home2</a></li>
+          <li><a href='#'>Search</a></li>
           <li><a href='#'>Home3</a></li>
-          <li><a href='#'>Contact Us</a></li>
-          
+          <li><a href='/contact'>Contact Us</a></li>
+          <li><a href='/about'>About</a></li>
         </ul> 
-        <button type='button'>Log in</button>
+        {user 
+        ?<button type='button' className='btn-login' onClick={handleSignOut}>Sign Out</button>
+        :<a href='/login'><button type='button' className='btn-login'>Log in</button></a>  
+        }
         <div className='hamgurger' onClick={handleClick}>
           {click 
                   ?(<FaTimes size={20} style={{color:"white"}}/>)
                   :(<FaBars size={20} style={{color:"white"}}/>)
           }
         </div>
-      {/* </nav> */}
     </div>
 
 

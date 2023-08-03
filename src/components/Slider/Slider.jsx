@@ -1,25 +1,18 @@
 import React from 'react'
 import './Slider.css'
-import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.jpg'
-import img4 from '../assets/img4.jpg'
-import img5 from '../assets/img5.jpg'
+import img from '../assets/logo11.png'
+
 
 
 
 const Slider = () => {
   return (
-  
-    <section>
-      <img src={img1} alt="" />
-      <img src={img2} alt="" />
-      <img src={img3} alt="" />
-      <img src={img4} alt="" />
-      <img src={img5} alt="" />
-    </section>
-
-
+    <div className="main"><img src={img}></img>
+      {/* <div className="bg"></div> */}
+      <div className="ingresar">
+        <h1><a href='/home'>GO!</a></h1>
+      </div>
+    </div>
   )
 }
 
