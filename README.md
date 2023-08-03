@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Movie Prime - Web de Películas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Movie Prime Logo]('logo11.png')
 
-## Available Scripts
+¡Bienvenido a Movie Prime! Esta es una web dedicada a brindarte las mejores recomendaciones de películas, trailers y reseñas. Nuestro objetivo es ofrecerte una experiencia de visualización de películas sin problemas y placentera. Ya seas un entusiasta del cine o estés buscando algo nuevo para ver, ¡estamos aquí para ayudarte!
 
-In the project directory, you can run:
+## Cómo ejecutar el proyecto localmente
 
-### `npm start`
+1. Clona este repositorio en tu máquina local.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Abre una terminal en la carpeta del proyecto y ejecuta el siguiente comando para instalar las dependencias:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install
 
-### `npm test`
+3. Después de la instalación, ejecuta el siguiente comando para iniciar la aplicación:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm start
 
-### `npm run build`
+4. La aplicación se abrirá automáticamente en tu navegador en [http://localhost:3000](http://localhost:3000). ¡Disfruta explorando nuestras películas!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionalidades principales
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Explora una amplia selección de películas en diferentes géneros.
+<!-- - Mira trailers de películas directamente en la página.
+- Lee reseñas detalladas de películas y calificaciones de usuarios.
+- Crea una cuenta y guarda tus películas favoritas para ver más tarde.
+- Participa en nuestra comunidad dejando tus propias reseñas y calificaciones. -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tecnologías utilizadas
 
-### `npm run eject`
+- React.js
+- CSS (con componentes estilizados)
+- Firebase (para autenticación y almacenamiento de datos)
+- API de películas (The Movie Database API)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Colaboración
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si deseas contribuir a este proyecto, ¡te damos la bienvenida! Puedes enviar pull requests con nuevas características, correcciones de errores o mejoras en general. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contacto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+¿Tienes alguna pregunta, sugerencia o comentario? No dudes en ponerte en contacto con nosotros:
 
-## Learn More
+- Correo electrónico: ayrtonacrc@gmail.com
+<!-- - Sitio web: [https://www.movieprime.com](https://www.movieprime.com)
+- Twitter: [@MoviePrimeApp](https://twitter.com/MoviePrimeApp)
+- Instagram: [@movieprime](https://www.instagram.com/movieprime) -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- ## Licencia
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este proyecto está bajo la licencia [MIT License](https://opensource.org/licenses/MIT). -->
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
