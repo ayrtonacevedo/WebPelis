@@ -1,6 +1,6 @@
 # Movie Prime - Web de Películas
 
-![Movie Prime Logo]('./logo11.png')
+![Movie Prime Logo](logo11.png)
 
 ¡Bienvenido a Movie Prime! Esta es una web dedicada a brindarte las mejores recomendaciones de películas, trailers y reseñas. Nuestro objetivo es ofrecerte una experiencia de visualización de películas sin problemas y placentera. Ya seas un entusiasta del cine o estés buscando algo nuevo para ver, ¡estamos aquí para ayudarte!
 
