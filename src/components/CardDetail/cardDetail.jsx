@@ -26,13 +26,13 @@ const MovieCard = ({ backdrop_path, poster_path, title, lanzamiento, genres, run
         <div className="card-content">
           <h2 className="card-title">{title} ({lanzamiento})</h2>
           <p className="card-release-date">
-            <strong>Fecha de lanzamiento:</strong> {fecha_lanzamiento}
+            <strong>Release date:</strong> {fecha_lanzamiento}
           </p>
           <p className="card-genre">
-            <strong>Género:</strong> {genres}
+            <strong>Gender:</strong> {genres}
           </p>
           <p className="card-runtime">
-            <strong>Duración:</strong> {runtime} minutos
+            <strong>Duration:</strong> {runtime} minutos
           </p>
           <p className="card-rating">
             {/* <strong>Calificación:</strong>  */}
@@ -41,12 +41,12 @@ const MovieCard = ({ backdrop_path, poster_path, title, lanzamiento, genres, run
            
           </p>
           <p className="card-overview">{overview}</p>
-          <p className="card-crew">
+          {/* <p className="card-crew">
             <strong>Director:</strong>
           </p>
           <p className="card-crew">
             <strong>Escritor:</strong> 
-          </p>
+          </p> */}
         </div>
       
 

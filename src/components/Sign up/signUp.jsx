@@ -24,13 +24,13 @@ const SignUp = () => {
             navigate('/home');
         } catch (error) {
             if(error === 'auth/invalid-email'){
-                setError('Correo Invalido')
+                setError('Invalid Email')
             }
             if(error === 'auth/weak-password'){
-                setError('La contraseña debe tener al menos 6 caracteres')
+                setError('The password must be at least 6 characters')
             }
             if(error=== 'auth/email-already-in-use'){
-                setError('El email ya esta en uso')
+                setError('The email is already in use')
             }
             
             console.log(error)
@@ -39,7 +39,7 @@ const SignUp = () => {
   return (
     <div className='signUp'>
         <div className="container-signUp">
-        {error ? <p>{error}</p> :null}
+        {error ? <p className='error-messagee'>{error}</p> :null}
             <form onSubmit={handleSubmit}>
             <div className="email">
                 <label htmlFor='email'> Email</label>
@@ -55,7 +55,7 @@ const SignUp = () => {
             </div>
 
             </form>
-            <a href='/login'>Login</a>
+            <a href='/login'>Sign In</a>
 
 
         </div>

@@ -31,6 +31,7 @@
     cursor: pointer;
     font-size: 15px;
     transition: .4s;
+    border-radius: 5px;
   }
   .close-button:hover{
     transform: scale(1.3);

@@ -11,7 +11,7 @@
     padding: 1rem;
     padding-bottom: 0;
     padding-top: 0;
-     /* position: fixed; */
+     position: fixed;
      top: 0;
      left: 0;
     width: 100%;
@@ -19,8 +19,6 @@
     background-color:black;
     opacity: 0.8;
     z-index:10;
-    
-    
     
 }
 
@@ -31,9 +29,7 @@
 
 
 span{
-    color:red;
-    
-    
+    color:red; 
 }
 .nav-menu{
     display: flex;
@@ -87,8 +83,6 @@ span{
         left: -100%;
         z-index: -3;
         transition: 0.5s;
-     
-    
     }
     .nav-menu.active{
         left: 0;
@@ -99,9 +93,4 @@ span{
     .nav-menu li a{
         font-size: 2rem;
     }
-
-
-
-
-
 }

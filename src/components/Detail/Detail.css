@@ -4,6 +4,7 @@
      height: 800px;
      padding: 100px 20px 100px 20px; 
      position: relative;
+    margin-top: 0;
      /* margin-bottom: 600px;   */
       /* espacio superior, derecho, inferior, izquierdo  */
 }
@@ -18,7 +19,8 @@
 }
 .movie-actors h2{
 margin-bottom: 5px;
-color: rgb(0, 0, 0);
+color: red;
+
 }
 .actors-list{
     display: flex;

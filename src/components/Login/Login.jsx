@@ -1,70 +1,79 @@
 import s from './Login.css'
 import React, { useState } from 'react'
-import {useAuth} from '../../context/authContext'
-import {useNavigate} from 'react-router-dom'
+import { useAuth } from '../../context/authContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
-    const [user, setUser]=useState({
-        email:'',
-        password:'',
+    const [user, setUser] = useState({
+        email: '',
+        password: '',
     })
-    const {login} =useAuth()
-    const navigate=useNavigate()
-    const [error, setError]=useState()
+    const { login, loginWithGoogle } = useAuth()
+    const navigate = useNavigate()
+    const [error, setError] = useState()
 
-    const handleChange = ({target:{name, value}})=>{
-        setUser({...user,[name]:value})
-}
-    const handleSubmit = async (e) =>{
+    const handleChange = ({ target: { name, value } }) => {
+        setUser({ ...user, [name]: value })
+    }
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError('')
         try {
             await login(user.email, user.password);
             navigate('/home');
         } catch (error) {
-            // if(error === 'auth/invalid-email'){
-            //     setError('Correo Invalido')
-            // }
-            // if(error === 'auth/weak-password'){
-            //     setError('La contraseña debe tener al menos 6 caracteres')
-            // }
-            // if(error=== 'auth/email-already-in-use'){
-            //     setError('El email ya esta en uso')
-            // }
-            
-            console.log(error)
+            if (error.code === 'auth/user-not-found') {
+                setError('User Not Found')
+            }
+            if (error.code === 'auth/wrong-password') {
+                setError('Password Is Incorrect')
+            }
+            if (error.code === 'auth/invalid-email') {
+                setError('Invalid email')
+            }
+
+            console.log(error.code)
         }
     }
-  return (
-    <div className='signUp'>
-        <div className="container-signUp">
-        {error ? <p>{error}</p> :null}
-            <form onSubmit={handleSubmit}>
-            <div className="email">
-                <label htmlFor='email'> Email</label>
-                <input type='email' name='email' placeholder='youremail@company.com' onChange={handleChange}/>
-            </div>
+    const handleGoogleSignIn= async ()=>{
+        try {
+            // throw new Error('Google error')
+            await loginWithGoogle()
+            navigate('/profile')
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+    return (
+        <div className='login'>
+            <div className="container-login">
+                {error ? <p className='error-message'>{error}</p> : null}
+                <form onSubmit={handleSubmit}>
+                    <div className="email">
+                        <label htmlFor='email'> Email</label>
+                        <input type='email' name='email' placeholder='youremail@company.com' onChange={handleChange} />
+                    </div>
 
-            <div className="password">
-                <label htmlFor='password'>Password</label>
-                <input type='password' name='password' placeholder='******' id='password' onChange={handleChange}/>
-            </div>
-            <div className="button">
-                <button className='button-signUp'>Login</button>
-               
+                    <div className="password">
+                        <label htmlFor='password'>Password</label>
+                        <input type='password' name='password' placeholder='******' id='password' onChange={handleChange} />
+                    </div>
+                    <div className="button">
+                        <button className='button-login'>Login</button>
+                    </div>
 
+                </form>
             </div>
-
-            </form>
-            <a href='/signUp'>Sign Up</a>
+            <div className="account-section">
+                <label>Don't have an Account</label> <a href="/signUp">Register</a>
+            </div>
+            <button className='btn-google' onClick={handleGoogleSignIn}>Google Login</button>
+                
 
 
         </div>
-
-        
-    </div>
-  )
+    )
 }
 
 export default Login

@@ -6,6 +6,7 @@ import CardDetail from '../CardDetail/cardDetail'
 import axios from "axios";
 import CardActors from "../CardActors/CardActors";
 import Footer from "../Footer/Footer";
+import Spinner from "../Spiner/Spinner";
 
 
 
@@ -63,7 +64,7 @@ useEffect(()=>{
     
         <div className="container-detail">
         <div className="movie-detail">
-        {detail
+        {detail 
         ? 
         <CardDetail key={detail.id} backdrop_path={detail.backdrop_path}
         poster_path={detail.poster_path}
@@ -77,11 +78,11 @@ useEffect(()=>{
         director={director}
         writing={writer}
         />
-        :null
+        :<Spinner></Spinner>
         }
         </div>
         <div className="movie-actors">
-          <h2>Reparto Principal</h2>
+          <h2>Main Cast</h2>
           <div className="actors-list">
             {actors.map(actor=>(
               <CardActors

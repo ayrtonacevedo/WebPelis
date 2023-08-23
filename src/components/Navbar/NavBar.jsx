@@ -26,14 +26,14 @@ const NavBar = () => {
         <Link to='/home'><h2 className='logo'>Movie <span>Prime</span></h2></Link>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li><a href='/home'>Home</a></li>
-          <li><a href='#'>Search</a></li>
-          <li><a href='#'>Home3</a></li>
+          <li><a href='/search'>Search</a></li>
+          <li><a href='/profile'>Profile</a></li>
           <li><a href='/contact'>Contact Us</a></li>
           <li><a href='/about'>About</a></li>
         </ul> 
         {user 
         ?<button type='button' className='btn-login' onClick={handleSignOut}>Sign Out</button>
-        :<a href='/login'><button type='button' className='btn-login'>Log in</button></a>  
+        :<a href='/login'><button type='button' className='btn-login'>Login</button></a>  
         }
         <div className='hamgurger' onClick={handleClick}>
           {click 

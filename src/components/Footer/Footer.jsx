@@ -19,14 +19,14 @@ const Footer = () => {
       <div className="right">
         <ul>Navegation
         <li><a href='/home'>Home</a></li>
-          <li><a href='#'>Search</a></li>
-          <li><a href='#'>Home3</a></li>
+          <li><a href='/search'>Search</a></li>
+          <li><a href='/profile'>Profile</a></li>
           <li><a href='/contact'>Contact Us</a></li>
           <li><a href='/about'>About</a></li>
           </ul>
           <ul>Usuario
-          <li><a href='/login' >Iniciar Sesion</a></li>
-          <li><a href='/signUp'>Registrarse</a></li>
+          <li><a href='/login' >Sign In</a></li>
+          <li><a href='/signUp'>Sign Up</a></li>
           </ul>
 
       </div>

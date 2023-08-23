@@ -8,6 +8,8 @@ import Login from "./routes/Login";
 import {AuthProvider} from './context/authContext'
 import SignUp from "./routes/SignUp";
 import About from "./routes/About";
+import Search from "./routes/Search";
+import Profile from "./routes/Profile";
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
         <Route path="/login" element={<Login/>}/>  
         <Route path="/signUp" element={<SignUp/>}/>  
         <Route path="/about" element={<About/>}/>  
+        <Route path="/search" element={<Search/>}/>  
+        <Route path="/profile" element={<Profile/>}/>  
+
+
         
         
       </Routes>
