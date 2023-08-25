@@ -2,6 +2,7 @@ import s from './Login.css'
 import React, { useState } from 'react'
 import { useAuth } from '../../context/authContext'
 import { useNavigate } from 'react-router-dom'
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
@@ -9,7 +10,7 @@ const Login = () => {
         email: '',
         password: '',
     })
-    const { login, loginWithGoogle } = useAuth()
+    const { login, loginWithGoogle, resetPassword } = useAuth()
     const navigate = useNavigate()
     const [error, setError] = useState()
 
@@ -32,6 +33,9 @@ const Login = () => {
             if (error.code === 'auth/invalid-email') {
                 setError('Invalid email')
             }
+            if (error.code === 'auth/missing-password') {
+                setError('Missing password')
+            }
 
             console.log(error.code)
         }
@@ -45,6 +49,19 @@ const Login = () => {
             setError(error.message)
         }
     }
+
+    const handleResetPassword = async()=>{
+        if(!user.email)
+            return setError('Please enter you email')
+     
+        try {
+            await resetPassword(user.email)
+            setError('We sent you an email with a link yo reset your password')
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+
     return (
         <div className='login'>
             <div className="container-login">
@@ -59,16 +76,22 @@ const Login = () => {
                         <label htmlFor='password'>Password</label>
                         <input type='password' name='password' placeholder='******' id='password' onChange={handleChange} />
                     </div>
-                    <div className="button">
+                    <div className="button-l">
                         <button className='button-login'>Login</button>
+                        <a className='forgot-password'
+                            onClick={handleResetPassword}
+                        >Forgot Password?</a>
                     </div>
 
                 </form>
             </div>
             <div className="account-section">
-                <label>Don't have an Account</label> <a href="/signUp">Register</a>
+                <label>Don't have an account?</label> <a href="/signUp">Register</a>
             </div>
-            <button className='btn-google' onClick={handleGoogleSignIn}>Google Login</button>
+            <button className='btn-google' onClick={handleGoogleSignIn}>
+                <FcGoogle size={25} style={{ marginRight: '10px'}} />
+                    Sign in with Google
+            </button>
                 
 
 

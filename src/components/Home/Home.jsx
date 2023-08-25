@@ -75,7 +75,7 @@ const Home = () => {
 
   return (
     <div className='container'>
-      {movies && movies[0]
+      {movies && movies[0] 
         ?<div className='cards'>
         {movies.map((movie)=>
           <Link to={`/detail/${movie.id}`}> 

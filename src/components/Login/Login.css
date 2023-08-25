@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 400px;
   height: auto;
   padding: 20px;
   border: 2px solid #ccc;
@@ -24,21 +24,42 @@
   background-color:black;
   color: white;
 }
+.container-login form{
+width: 100%;
+}
 .email,
 .password {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 20px;
 }
 .container-login label {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 .container-login input {
   padding: 10px;
   border: none;
   border-bottom: 1px solid #ccc; /* Agregar solo borde inferior */
-  width: 100%;
+  width: 300px;
   font-size: 16px;
+}
+.button-l {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.forgot-password {
+  color: red; /* Cambia el color según tus necesidades */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+.forgot-password:hover{
+  color: darkred;
 }
 .button-login {
   border: none;
@@ -49,7 +70,7 @@
   font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .button-login:hover {
@@ -58,17 +79,19 @@
 .account-section{
   margin-top: 15px;
   margin-bottom: 15px;
+
 }
 .account-section label {
   margin-right: 60px; /* Agregar espacio entre el label y el enlace */
+  color: white;
 }
-a {
+.account-section a {
   margin-top: 10px;
-  color: #007bff;
+  color: white;
   text-decoration: none;
   font-size: 16px; /* Aumentar el tamaño de la letra */
 }
-a:hover {
+.account-section a:hover {
   text-decoration: underline;
 }
 
@@ -81,6 +104,8 @@ a:hover {
     margin-bottom: 5px;
   }
   .btn-google {
+    display: flex;
+    align-items: center;
     background-color: #4285f4;
     color: white;
     padding: 10px 20px;
@@ -89,8 +114,9 @@ a:hover {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 5px;
+    transition: background-color 0.3s, transform 0.3s; 
+    
+    /* margin-top: 5px; */
   }
   
   .btn-google:hover {
@@ -112,7 +138,7 @@ a:hover {
           width: 90%;
         } */
   
-    .button-login {
+    /* .button-login {
       width: 100%;
-    }
+    } */
   }

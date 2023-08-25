@@ -52,10 +52,15 @@ const getMovieActors = async()=>{
   }
  
 }
+  // Función para ajustar la posición de desplazamiento al principio de la página
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
 useEffect(()=>{
     getMovieDetails();
     getMovieActors();
+    scrollToTop();
   },[id])
 
 

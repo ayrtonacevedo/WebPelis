@@ -17,7 +17,9 @@ const Profile =()=>{
         <div className="profile-container">
             {user 
             ?<div className="profile">
-            <img src={user.photoURL} alt={imgProfile}></img>
+            <img src={user.photoURL
+                ?user.photoURL:
+                imgProfile}  alt={'nada'}></img>
             <h2>Welcome</h2>
             <h1>{user.displayName
             ?user.displayName

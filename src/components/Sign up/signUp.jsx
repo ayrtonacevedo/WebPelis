@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './signUp.css'
 import {useAuth} from '../../context/authContext'
 import {useNavigate} from 'react-router-dom'
+import { FcGoogle } from "react-icons/fc";
+
 
 
 const SignUp = () => {
@@ -9,7 +11,7 @@ const SignUp = () => {
         email:'',
         password:'',
     })
-    const {signup} =useAuth()
+    const {signup, loginWithGoogle} =useAuth()
     const navigate=useNavigate()
     const [error, setError]=useState()
 
@@ -32,10 +34,23 @@ const SignUp = () => {
             if(error=== 'auth/email-already-in-use'){
                 setError('The email is already in use')
             }
+            if(error==='auth/missing-password'){
+                setError('missing password')
+            }
             
             console.log(error)
         }
     }
+    const handleGoogleSignIn= async ()=>{
+        try {
+            // throw new Error('Google error')
+            await loginWithGoogle()
+            navigate('/profile')
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+
   return (
     <div className='signUp'>
         <div className="container-signUp">
@@ -55,12 +70,16 @@ const SignUp = () => {
             </div>
 
             </form>
-            <a href='/login'>Sign In</a>
-
-
         </div>
 
-        
+        {/* <a href='/login'>Sign In</a> */}
+        <div className="account-section">
+                <label>I already have an account</label> <a href="/login">Login</a>
+            </div>
+            <button className='btn-google' onClick={handleGoogleSignIn}>
+                <FcGoogle size={25} style={{ marginRight: '10px'}} />
+                    Sign in with Google
+            </button>
     </div>
   )
 }
