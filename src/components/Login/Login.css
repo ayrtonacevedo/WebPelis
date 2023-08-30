@@ -1,14 +1,15 @@
-.login {
+
+.login{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 60vh;
-  margin-top: 41px;
-  margin-bottom: 40px;
+  padding: 100px 0rem 28rem 0rem; 
   position: relative;
+ margin-top: 0;
 }
+
 
 .container-login {
   display: flex;

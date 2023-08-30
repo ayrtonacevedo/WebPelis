@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../Home/Home.css'
 import axios from 'axios'
 import Card from '../Card/Card'
-import { FaSearch } from 'react-icons/fa';
+// import { FaSearch } from 'react-icons/fa';
 import { WiDirectionUp } from 'react-icons/wi';
 import { Link } from 'react-router-dom';
 import Spinner from '../Spiner/Spinner';
@@ -15,9 +15,9 @@ const Home = () => {
 
   const[movies,setMovies]=useState([])
 
-  const [trailer, setTrailer]=useState(null)
-  const [movie, setMovie]=useState([])
-  const [playing, setPlaying]=useState(false)
+  // const [trailer, setTrailer]=useState(null)
+  // const [movie, setMovie]=useState([])
+  // const [playing, setPlaying]=useState(false)
 
   const [currentPage, setCurrentPage]=useState(1)
   const [totalPage, setTotalPage]=useState(0)
@@ -69,6 +69,7 @@ const Home = () => {
 
   useEffect(()=>{
     fetchMovies()
+    console.log(movies)
   },[currentPage])
   
 

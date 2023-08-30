@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from "react";
 import s from './Detail.css'
-import Card from "../Card/Card";
 import { useParams } from 'react-router-dom';
 import CardDetail from '../CardDetail/cardDetail'
 import axios from "axios";
@@ -12,39 +11,37 @@ import Spinner from "../Spiner/Spinner";
 
 const Detail = () => {
 
-  // Código de tu componente
-
 const [detail, setDetail]=useState()
 const [actors, setActors]=useState([])
-const [director, setDirector] = useState('');
-const [writer, setWriter] = useState('');
 const API_KEY = '30ea27f9fbbeb2bc86bc0344f2aec446';
-const URL_IMAGE='https://image.tmdb.org/t/p/original'
+const API_URL='https://api.themoviedb.org/3'
 const {id}=useParams()
 
 
+// Funcion para obtener todo el detalle de la pelicula
 const getMovieDetails = async () => {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
     const data = await response.json(); 
     setDetail(data)
-    console.log(data);
+   
 
-     // Aquí puedes acceder a los detalles de la película en el objeto 'data'
-console.log(id)
+// Aquí puedes acceder a los detalles de la película en el objeto 'data'
+// console.log(id)
+// console.log(data);
 
   } catch (error) {
     console.log(error);
   }
 };
-
+// Funcion para obtener la lista de actores de la pelicula
 const getMovieActors = async()=>{
   try{
     const response= await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`)
     const cast=response.data.cast;
     setActors(cast)
-    console.log(cast)
-    console.log(response.data)
+    // console.log(cast)
+    // console.log(response.data)
 
   
   }catch(error){
@@ -52,6 +49,9 @@ const getMovieActors = async()=>{
   }
  
 }
+
+
+
   // Función para ajustar la posición de desplazamiento al principio de la página
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -65,12 +65,12 @@ useEffect(()=>{
 
 
     return (
-      // Contenido JSX del componente
-    
+
         <div className="container-detail">
         <div className="movie-detail">
         {detail 
-        ? 
+        ? (
+          <>
         <CardDetail key={detail.id} backdrop_path={detail.backdrop_path}
         poster_path={detail.poster_path}
         title={detail.title}
@@ -80,9 +80,9 @@ useEffect(()=>{
         vote_average={detail.vote_average}
         overview={detail.overview}
         fecha_lanzamiento={detail.release_date}
-        director={director}
-        writing={writer}
         />
+          </>
+        )
         :<Spinner></Spinner>
         }
         </div>
@@ -100,9 +100,6 @@ useEffect(()=>{
         </div>
         <Footer/>
       </div>
-
-  
-
     );
   };
   export default Detail;
