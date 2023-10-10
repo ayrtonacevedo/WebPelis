@@ -1,0 +1,12 @@
+.containerActorDetail {
+  margin-top: 100px;
+  height: 100%;
+
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.detail-actors-container {
+  color: white;
+}

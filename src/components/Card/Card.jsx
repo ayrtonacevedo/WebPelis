@@ -6,7 +6,7 @@ return(
     <img src={image} alt="imagen" className="card_image"/>
     <figcaption className="card_body">
         <h2 className="card_title">{title}</h2>
-        <p className="card_description"></p>
+        {/* <p className="card_description"></p> */}
     </figcaption>
 </figure>    
 )

@@ -1,16 +1,16 @@
 import React from "react";
 import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/Footer/Footer";
-import Home2 from "../components/Home/Home";
+import ActorDetail from "../components/ActorDetail/actorDetail";
 
-const Home = () => {
+const DetailActor = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <Home2></Home2>
+      <ActorDetail />
       <Footer></Footer>
     </div>
   );
 };
 
-export default Home;
+export default DetailActor;

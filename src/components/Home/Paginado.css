@@ -1,0 +1,63 @@
+
+  .pagination{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 7px; /* Espacio entre elementos */
+   margin-bottom: 1rem;
+  }
+  .buttonPage{
+    padding: 4px 6px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .buttonPage:hover {
+    background-color: #007bff; /* Cambia el color de fondo al pasar el mouse */
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+  }
+  .page-number{
+    background-color: bisque;
+    color: black;
+    border: 1px solid black;
+    padding: 9px 6px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  .page-number.active {
+    background-color: darkred; /* Cambia el color de fondo a tu preferencia */
+    color: #fff; /* Cambia el color del texto a tu preferencia */
+    border: 1px solid black; /* Opcional: Agrega un borde al botón */
+    padding: 12px 6px;
+  }
+  .page-number:hover{
+    background-color: #007bff; /* Cambia el color de fondo al pasar el mouse */
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+  }
+  @media screen and (max-width: 768px) {
+    .pagination {
+      flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente */
+      justify-content: center; /* Centra horizontalmente los elementos */
+      align-items: center; /* Centra verticalmente los elementos */
+      gap: 3px;
+    }
+  
+    .buttonPage,
+    .page-number {
+      margin: 0; /* Espacio entre elementos */
+      border: none;
+    }
+    .buttonPage{
+        padding: 2px 6px;
+        font-size: 18px;
+    }
+    .page-number{
+        padding: 6px 3px;
+        font-size: 12px;
+    }
+  }

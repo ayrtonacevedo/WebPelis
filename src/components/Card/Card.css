@@ -1,7 +1,5 @@
 .card{
     position: relative;
-    /* width: 350px;
-    height: 500px; */
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -29,7 +27,15 @@
     align-items: center;
     row-gap: 15px;
     justify-content: center;
+    opacity: 0; /* Oculta el contenido por defecto */
+    transform: translateY(-25px); /* Mueve el contenido hacia arriba */
+    transition: opacity 0.25s, transform 0.25s;
 }
+.card:hover .card_body {
+    opacity: 1; /* Muestra el contenido en hover */
+    transform: translateY(0); /* Vuelve a su posición original */
+  }
+  
 .card_body::before{
     content: '';
     position: absolute;
@@ -48,7 +54,12 @@
     text-transform: uppercase;
     text-shadow: 1px 1px 10px
     rgba(0,0,0,0.5);
+    opacity: 0; /* Oculta el título por defecto */
+    transition: opacity 0.25s;
 }
+.card:hover .card_title {
+    opacity: 1; /* Muestra el título en hover */
+  }
 .card_description{
     font-size: 14px;
     opacity: 0;
