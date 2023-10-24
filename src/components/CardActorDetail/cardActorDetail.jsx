@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./cardActorDetail.css";
 import CardMovieSimilar from "../CardMovieSimilar/CardMovieSimilar";
+import CardMovieActors from "../CardMovieActors/CardMovieActors";
 
-// ajustar biografia, arrancar de 0, comparando con la card detail de las peliculas
 const cardActorDetail = ({
   key,
   name,
@@ -60,10 +60,15 @@ const cardActorDetail = ({
           <div className="knownFor-movies">
             {movieActor &&
               movieActor.map((movie, index) => (
-                <CardMovieSimilar
-                  key={index} // Asegúrate de proporcionar una key única para cada elemento en la lista
+                // <CardMovieSimilar
+                //   key={index} // Asegúrate de proporcionar una key única para cada elemento en la lista
+                //   title={movie.title}
+                //   backdrop_path={movie.poster_path}
+                //   id={movie.id}
+                // />
+                <CardMovieActors
                   title={movie.title}
-                  backdrop_path={movie.poster_path}
+                  img={movie.poster_path}
                   id={movie.id}
                 />
               ))}

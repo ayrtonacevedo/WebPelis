@@ -127,19 +127,22 @@ const Detail = () => {
           ))}
         </div>
       </div>
-      <div className="movies-similares">
-        <h2>Recommendations</h2>
-        <div className="actors-list" id="scrollContainer1" ref={sidebarRef1}>
-          {similarMovies.map((m) => (
-            <CardMovieSimilar
-              // key={m.id}
-              title={m.title}
-              backdrop_path={m.backdrop_path}
-              id={m.id}
-            />
-          ))}
+      {similarMovies[0] ? (
+        <div className="movies-similares">
+          <h2>Recommendations</h2>
+          <div className="actors-list" id="scrollContainer1" ref={sidebarRef1}>
+            {similarMovies.map((m) => (
+              <CardMovieSimilar
+                // key={m.id}
+                title={m.title}
+                backdrop_path={m.backdrop_path}
+                id={m.id}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
+
       <Footer />
     </div>
   );
