@@ -1,0 +1,50 @@
+.main {
+  width: 100%;
+  height: 100vh; /* 100% del viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a los extremos */
+  align-items: center;
+  /* background-color: #000000;  */
+  padding: 2vh 5vw;
+  /* text-align: center; */
+  position: fixed;
+  top: 0;
+}
+.navbar h2 {
+  /* margin-left: 100px;
+  margin-top: 10px; */
+  font-size: 40px;
+  color: white;
+}
+.centro a {
+  text-decoration: none;
+  color: white;
+  background-color: #e60312;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.centro a:hover {
+  background-color: #8a020b;
+  text-decoration: none;
+}
+.centro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
